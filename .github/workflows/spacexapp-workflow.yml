@@ -49,3 +49,9 @@ jobs:
 
       - name: Print the Downloaded Path
         run: echo ${{steps.spacexfolderdownload.outputs.download-path}}
+
+      - name: Install Surge
+        run: npm install -g surge
+
+      - name: Deploying the Application using Surge
+        run: surge . ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
