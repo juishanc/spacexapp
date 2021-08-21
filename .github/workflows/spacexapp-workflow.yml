@@ -4,34 +4,41 @@ on: [push]
 
 jobs:
   build:
-    - name: Buildingggg
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install and Configure Node.JS
-        uses: actions/setup-node@v2
-        with:
-          node-version: "12"
+    - name: Build Job 
+        runs-on: ubuntu-latest
+        steps:
+          - name: Verify the Node.JS Version
+          run: node --version
+  
+#   build:
+
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Install and Configure Node.JS
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: "12"
       
-      - name: Verify the Node.JS Version
-        run: node --version
+#       - name: Verify the Node.JS Version
+#         run: node --version
 
-      - name: Install Gatsby Library
-        run: npm install -g gatsby-cli
-      - name: Checkout the Code
-        uses: actions/checkout@v2
+#       - name: Install Gatsby Library
+#         run: npm install -g gatsby-cli
+#       - name: Checkout the Code
+#         uses: actions/checkout@v2
 
-      - name: Install Node Modules
-        run: npm install
+#       - name: Install Node Modules
+#         run: npm install
 
-      - name: Build the Spacex Application using Gatsby
-        run: gatsby build
+#       - name: Build the Spacex Application using Gatsby
+#         run: gatsby build
 
-      - name: Archive the Build Folder i.e public folder
-        uses: actions/upload-artifact@v2
-        with:
-          name: spacexpublicfolder
-          path: public
-        if: always()
+#       - name: Archive the Build Folder i.e public folder
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: spacexpublicfolder
+#           path: public
+#         if: always()
 
 #   deployment:
 #     runs-on: ubuntu-latest
