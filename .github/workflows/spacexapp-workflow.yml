@@ -11,7 +11,7 @@ jobs:
       - name: Install and Configure Node.JS
         uses: actions/setup-node@v2
         with:
-          node-version: "12"
+          node-version: "14"
       
       - name: Verify the Node.JS Version
         run: node --version
